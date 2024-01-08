@@ -1,0 +1,17 @@
+stages:
+  - build
+
+build-job:
+  stage: build
+  script:
+    - rm -rf artifacts
+    - mkdir artifacts
+    - (cd src/cat && make)
+    - (cd src/grep && make)
+    - cp src/cat/s21_cat src/grep/s21_grep artifacts
+  artifacts:
+    paths:
+      - artifacts
+    expire_in: 30 days
+  only:
+    - develop

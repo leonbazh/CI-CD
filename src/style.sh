@@ -8,5 +8,5 @@ if [[ -n $check ]];then
   echo $check
   exit 1
 else
-  echo Code is clang-formatted
+  echo Code is clang-formatted 
 fi

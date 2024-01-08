@@ -13,5 +13,3 @@ building:
     paths:
       - artifacts
     expire_in: 30 days
-  only:
-    - develop

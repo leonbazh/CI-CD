@@ -24,4 +24,4 @@ clanging:
     - cd src
     - rm -rf .clang-format
     - cp ../materials/linters/.clang-format .
-    - ./style.sh
+    - bash style.sh

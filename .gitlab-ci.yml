@@ -1,7 +1,7 @@
 stages:
   - build
 
-build-job:
+building:
   stage: build
   script:
     - rm -rf artifacts

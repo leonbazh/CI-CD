@@ -1,15 +1,27 @@
 stages:
   - build
+  - style
 
 building:
   stage: build
   script:
     - rm -rf artifacts
     - mkdir artifacts
-    - (cd src/cat && make)
-    - (cd src/grep && make)
+    - cd src/cat
+    - make
+    - cd ../grep
+    - make
+    - cd ../..
     - cp src/cat/s21_cat src/grep/s21_grep artifacts
   artifacts:
     paths:
       - artifacts
     expire_in: 30 days
+
+clanging:
+  stage: style
+  script:
+    - cd src
+    - rm -rf .clang-format
+    - cp /materials/linters/.clang-format .
+    - ./style_check.sh

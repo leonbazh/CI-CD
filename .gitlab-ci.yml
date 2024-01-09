@@ -1,6 +1,7 @@
 stages:
   - build
   - style
+  - test
 
 building:
   stage: build
@@ -17,6 +18,15 @@ building:
 clanging:
   stage: style
   script:
+    - cd src
+    - cp ../materials/linters/.clang-format .
+    - bash style.sh
+
+testing:
+  stage: test
+  script:
+    - (cd src/cat && make)
+    - (cd src/grep && make)
     - cd src
     - cp ../materials/linters/.clang-format .
     - bash style.sh

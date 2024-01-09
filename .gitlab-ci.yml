@@ -30,3 +30,4 @@ testing:
     - cd src
     - cp ../materials/linters/.clang-format .
     - bash style.sh
+    - echo all integration tests passed

@@ -2,6 +2,7 @@ stages:
   - build
   - style
   - test
+  - deploy
 
 building:
   stage: build
@@ -31,3 +32,9 @@ testing:
     - cp ../materials/linters/.clang-format .
     - bash style.sh
     - echo all integration tests passed
+
+deploying:
+  stage: deploy
+  script:
+    - bash deploy.sh
+

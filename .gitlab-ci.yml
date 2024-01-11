@@ -36,7 +36,5 @@ testing:
 deploying:
   stage: deploy
   script:
-    - ls
-    - ls artifacts
     - bash deploy.sh
 

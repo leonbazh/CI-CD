@@ -7,6 +7,7 @@ stages:
 building:
   stage: build
   script:
+    - rm -rf artifacts
     - (cd src/cat && make)
     - (cd src/grep && make)
     - mkdir artifacts 
@@ -19,6 +20,7 @@ building:
 clanging:
   stage: style
   script:
+    - rm -rf src/.clang-format
     - cd src
     - cp ../materials/linters/.clang-format .
     - bash style.sh

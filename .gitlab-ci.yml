@@ -16,7 +16,7 @@ building:
       - artifacts
     expire_in: 30 days
   after_script:
-    bash notification.sh
+    - bash notification.sh
 
 clanging:
   stage: style
@@ -25,7 +25,7 @@ clanging:
     - cp ../materials/linters/.clang-format .
     - bash style.sh
   after_script:
-    bash notification.sh
+    - bash notification.sh
 
 testing:
   stage: test
@@ -37,12 +37,12 @@ testing:
     - bash style.sh
     - echo all integration tests passed
   after_script:
-    bash notification.sh
+    - bash notification.sh
 
 deploying:
   stage: deploy
   script:
     - bash deploy.sh
   after_script:
-    bash notification.sh
+    - bash notification.sh
 
